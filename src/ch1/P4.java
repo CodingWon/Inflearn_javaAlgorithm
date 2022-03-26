@@ -15,16 +15,8 @@ public class P4 {
     private static String[] solution(int num, String[] strarr) {
 
         for(int i =0; i<num; i++){
-            char[] arr = strarr[i].toCharArray();
-            int leng = arr.length;
-            int setNum =leng/2;
-            char tmp = ' ';
-            for(int j = 0; j<setNum; j++){
-                tmp = arr[j];
-                arr[j] = arr[leng-j-1];
-                arr[leng-j-1] = tmp;
-            }
-            strarr[i] = String.valueOf(arr);
+            String str = new StringBuilder(strarr[i]).reverse().toString();
+            strarr[i] = str;
         }
         return strarr;
     }
