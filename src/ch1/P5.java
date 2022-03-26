@@ -16,18 +16,17 @@ public class P5 {
         int lt =0;
         int rt = arr.length-1;
         while (lt <rt){
-            if(Character.isAlphabetic(arr[lt]) && Character.isAlphabetic(arr[rt])){
+            if(!Character.isAlphabetic(arr[lt])) {
+                lt++;
+            }else if(!Character.isAlphabetic(arr[rt])){
+                rt--;
+            }else {
                 char tmp = arr[lt];
                 arr[lt] = arr[rt];
                 arr[rt] = tmp;
                 lt++;
                 rt--;
-            }else if(!Character.isAlphabetic(arr[lt])){
-                lt++;
-            }else if(!Character.isAlphabetic(arr[rt])){
-                rt--;
             }
-
         }
         return String.valueOf(arr);
     }
