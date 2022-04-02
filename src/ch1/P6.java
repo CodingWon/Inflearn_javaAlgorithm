@@ -10,26 +10,11 @@ public class P6 {
         String answer = solution(str);
         System.out.println(answer);
     }
-
-    private static String solution(String str) {
-        char[] arr = str.toCharArray();
-        char[] tmp = new char[arr.length];
-        int cnt = 0;
-        for (int i = 0; i<arr.length; i++){
-            boolean isEquals = false;
-            for(int j = 0; j<tmp.length; j++){
-              if(arr[i] == tmp[j]){
-                  isEquals = true;
-                  break;
-              }
-            }
-            if(!isEquals){
-                tmp[cnt] = arr[i];
-                cnt++;
-            }
+    static String solution(String str){
+        String answer ="";
+        for(int i = 0; i<str.length(); i++){
+            if(str.indexOf(str.charAt(i)) == i) answer += str.charAt(i);
         }
-        String answer =  String.valueOf(tmp);
-        answer = answer.trim();
-        return answer;
+            return answer;
     }
 }
